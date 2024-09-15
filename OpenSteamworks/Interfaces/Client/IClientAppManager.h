@@ -37,6 +37,7 @@ public:
 	virtual uint64 GetAppInstallDir( AppId_t unAppID, char *pchPath, uint32 cchPath ) = 0;
 	virtual unknown_ret GetAppContentInfo( AppId_t unAppID, bool, uint32*, uint32*, uint64*, uint64* ) = 0;
 	virtual unknown_ret GetAppStagingInfo(AppId_t unAppID, uint32*, uint32*) = 0;
+	virtual unknown_ret BGetContentInfoForApps(uint64, uint64) = 0;
 	virtual bool IsAppDlcInstalled( AppId_t unAppID, AppId_t unDLCAppID ) = 0;
 	virtual bool GetDlcDownloadProgress( AppId_t unAppID, AppId_t unDLCAppID, uint64* lluUnk1, uint64* lluUnk2 ) = 0;
 	virtual bool BIsDlcEnabled(AppId_t unAppID, uint32, bool*) = 0;
@@ -62,9 +63,9 @@ public:
 	virtual unknown_ret GetFileDetails(AppId_t unAppID, const char *pchUnk) = 0;
 	virtual unknown_ret VerifySignedFiles(AppId_t unAppID) = 0;
 	virtual unknown_ret GetNumBetas(AppId_t unAppID, uint64, uint64) = 0;
-	virtual int32 GetAvailableBetas(AppId_t unAppID, int32* iunk1, char*, int32 iunk2) = 0;
+	virtual unknown_ret GetBetaInfo(AppId_t unAppID, uint32, uint64, uint64, uint64, uint64, uint32) = 0;
 	virtual bool CheckBetaPassword( AppId_t unAppID, char const*) = 0;
-	virtual bool BHasCachedBetaPassword( AppId_t unAppID, const char *cszBetaKey ) = 0;
+	virtual unknown_ret SetActiveBeta(AppId_t unAppID, char*, int32, uint32*) = 0;
 	virtual unknown_ret GetActiveBeta( AppId_t unAppID, char*, int32) = 0;
 	virtual bool BGetActiveBetaForApps( uint32* puUnk, int32 iUnk, char* pcUnk, int32 iUnk2) = 0;
 	virtual bool SetDownloadingEnabled( bool ) = 0;
