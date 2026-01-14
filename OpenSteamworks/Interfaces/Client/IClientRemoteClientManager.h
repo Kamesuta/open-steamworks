@@ -70,6 +70,8 @@ public:
     virtual bool BRemoteDeviceStreaming(uint64) = 0;
     virtual unknown_ret GetRemoteDeviceStreamingSession(uint64) = 0;
     virtual unknown_ret GetRemoteDeviceFormFactor(uint64) = 0;
+    virtual unknown_ret UnpairRemoteClient(uint64) = 0;
+    virtual unknown_ret UnpairRemoteDevice(uint64) = 0;
     virtual unknown_ret UnpairRemoteDevices() = 0;
     virtual bool BIsStreamingSupported() = 0;
     virtual bool BIsStreamingDisabledBySystemPolicy() = 0;
